@@ -1,8 +1,26 @@
 # Redux Lessons &amp; Tutorials
 
-1. Install Redux with npm:
+**What is Redux?**
+Redux is a state managment library for javaScript apps
 
-    `npm install redux react-redux`
+**What is doing Redux?**
+
+-   Redux centralizes application's state
+-   Makes data flow transparent & predictable
+-   Easy debugging
+-   Preserve page state
+-   Undo/Redu
+
+**When not to use Redux?**
+
+-   Tight Budget
+-   Small to medium-size apps
+-   Simple UI/Data flow
+-   Static Data
+
+---
+
+## Main Concepts:
 
 ### Store:
 
@@ -55,13 +73,17 @@ This is the way where we can execute this Action.
 
 ## STEPS:
 
-1.  create globalized state:
+1.  Install Redux with npm:
+
+    `npm install redux react-redux`
+
+2.  create globalized state:
     `import { createStore } from "redux";`
 
-2.  State takes REDUCER:
+3.  State takes REDUCER as parameter:
     `let store = createStore(reducer);`
 
-3.  For combinening many reducers:
+4.  For combinening many reducers:
     `import { combineReducers } from "redux";`
 
     You create file 'allReducers.js' that holds code and import it in 'index.js':
@@ -75,7 +97,7 @@ This is the way where we can execute this Action.
              isLogged: loggedReducer,
           });
 
-4.  For **Redux DevTools** Chrome Extension add this code to store as second parameter:
+5.  For **Redux DevTools** Chrome Extension add this code to store as second parameter:
     `window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()`
 
 >         const store = createStore(
@@ -83,7 +105,7 @@ This is the way where we can execute this Action.
 >            window.**REDUX_DEVTOOLS_EXTENSION** && window **REDUX_DEVTOOLS_EXTENSION**()
 >         );
 
-5.  for connection of global store to hole app (in 'index.js'):
+6.  for connection of global store to hole app (in 'index.js'):
 
 ##### step 1:
 
@@ -98,7 +120,7 @@ This is the way where we can execute this Action.
              document.getElementById("root")
           );
 
-6. For Selecting store states:
+7. For Selecting store states:
 
 ##### step 1:
 
@@ -109,7 +131,7 @@ This is the way where we can execute this Action.
       const counter = useSelector((state) => state.counter);
       const isLogged = useSelector((state) => state.isLogged);
 
-7. For dispatching actions:
+8. For dispatching actions:
 
 ##### step 1:
 
@@ -121,7 +143,9 @@ This is the way where we can execute this Action.
       <button onClick={() => dispatch(decrement())}>-</button>
       <button onClick={() => dispatch(incrementBy5(5))}>+ 5</button>
 
-8.  What is **'payload'** ?
+9.  What is **'payload'** ?
+
+payload is an object, that contains all the data about an ACTION.
 
 **App.js**
 
@@ -135,7 +159,6 @@ This is the way where we can execute this Action.
             payload: num,
          };
       };
-
 
 **counter.js**
 
