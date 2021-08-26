@@ -45,6 +45,15 @@ A globalized state, that holds all the data or state for our application and you
 
       let store = createStore(reducerName);
 
+##### getState()
+
+_getState()_ - method, that gives us app access to the state it currently holds / It gives current state.
+
+##### subscribe(listener)
+
+Register listeners to the subscribe() method.
+`subscribe()` method accepts a function as a parameter, which is executed any time the state in the Redux Store changes.
+
 -   ### Action:
 
 It is just name, that describes an action you want to do. It is just function, that returns an object:
@@ -92,6 +101,8 @@ It describes how your action transforms state into the next state. Reducer check
 
 This is the way where we can execute this Action.
 
+dispatch method accepts **_action as parameter_** !
+
       store.dispatch(increment());
       store.dispatch(decrement());
       store.dispatch(decrement());
@@ -106,6 +117,8 @@ This is the way where we can execute this Action.
     `npm init --yes`
 -   **Step 2:** add Redux as a dependency for app:
     `npm install redux`
+-   **Step 3:** add Redux with Node.js to Pure JavaScript file. NOT for REACT !
+    `const redux = require("redux");`
 
 ---
 
