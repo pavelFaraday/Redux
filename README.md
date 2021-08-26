@@ -24,6 +24,19 @@ Redux is a state managment library for javaScript apps. It is a predictable stat
 
 ---
 
+## Main Principles:
+
+1. **_The state of your hole application is stored in an object tree within a single store._**
+   Maintain our application state in an single object which would be managed by the Redux store.
+
+2. **_The only way to change the state is to emit the action, an object describing what happened._**
+   To update the state of your app, you need to let Redux know about that with an action.
+
+3. **_To specify how the state tree is transformed by actions, you wright reducers._**
+   `Reducers = (previousState, action) => newState`
+
+---
+
 ## Main Concepts:
 
 ### Store:
