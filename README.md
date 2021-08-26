@@ -75,9 +75,18 @@ This is the way where we can execute this Action.
 
 ---
 
+## Pure Redux Library
+
+-   **Step 1:** initialize 'package.json' file with the default settings:
+    `npm init --yes`
+-   **Step 2:** add Redux as a dependency for app:
+    `npm install redux`
+
+---
+
 ## STEPS:
 
-1.  Install Redux with npm:
+1.  Install React-Redux library with npm:
 
 -   react-redux is the official Redux UI binding library for React.
 
