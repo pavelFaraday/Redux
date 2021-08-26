@@ -1,12 +1,16 @@
 # Redux Lessons &amp; Tutorials
 
 **What is Redux?**
-Redux is a state managment library for javaScript apps
+Redux is a state managment library for javaScript apps. It is a predictable state container.
+
+-   Redux stores the state of application - It is a container of all states of application.
+-   In Redux state of an app is a state represented by all individual components of that app.
 
 **What is doing Redux?**
 
 -   Redux centralizes application's state
 -   Makes data flow transparent & predictable
+    -   In Redux all state transitions are explicit and and it is possible to keep track of them
 -   Easy debugging
 -   Preserve page state
 -   Undo/Redu
@@ -74,6 +78,8 @@ This is the way where we can execute this Action.
 ## STEPS:
 
 1.  Install Redux with npm:
+
+-   react-redux is the official Redux UI binding library for React.
 
     `npm install redux react-redux`
 
