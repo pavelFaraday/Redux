@@ -39,13 +39,13 @@ Redux is a state managment library for javaScript apps. It is a predictable stat
 
 ## Main Concepts:
 
-### Store:
+-   ### Store:
 
 A globalized state, that holds all the data or state for our application and you can access this state anywhere separatilly - in each component of application.
 
       let store = createStore(reducerName);
 
-### Action:
+-   ### Action:
 
 It is just name, that describes an action you want to do. It is just function, that returns an object:
 
@@ -60,7 +60,19 @@ It is just name, that describes an action you want to do. It is just function, t
          };
       };
 
-### Reducer:
+##### Action Creators:
+
+_action creator_ - it simply creates an action. It is an function that returns an action.
+
+      const BUY_CAKE = "BUY_CAKE";
+
+      const actionCreator = () => {
+         return {
+            type: BUY_CAKE,
+         };
+      };
+
+-   ### Reducer:
 
 It describes how your action transforms state into the next state. Reducer checks which ACTION you did and based on that action modifies STORE. It is a function, that has 2 parametres:
 
@@ -76,7 +88,7 @@ It describes how your action transforms state into the next state. Reducer check
             }
          };
 
-### Dispatch:
+-   ### Dispatch:
 
 This is the way where we can execute this Action.
 

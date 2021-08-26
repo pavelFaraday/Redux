@@ -1,1 +1,12 @@
-console.log("log from index");
+/* -------------------------------------------------------------------------- */
+/*                                   Actions                                  */
+/* -------------------------------------------------------------------------- */
+
+const BUY_CAKE = "BUY_CAKE";
+
+// action creator
+const actionCreator = () => {
+	return {
+		type: BUY_CAKE,
+	};
+};
