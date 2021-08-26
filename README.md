@@ -97,6 +97,21 @@ It describes how your action transforms state into the next state. Reducer check
             }
          };
 
+##### Combine Reducers:
+
+1.  add dependency for combining reducers:
+    `const combineReducers = redux.combineReducers;`
+
+2.  combine all reducers in root reducer:
+
+         const rootReducer = combineReducers({
+            cake: cakeReducer,
+            iceCream: iceCreamReducer,
+         });
+
+3.  pass root reducer as created Store parameter
+    `const store = createStore(rootReducer);`
+
 -   ### Dispatch:
 
 This is the way where we can execute this Action.
