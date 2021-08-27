@@ -124,6 +124,29 @@ dispatch method accepts **_action as parameter_** !
 
 > By **DISPATCH** We send **ACTION** to the **REDUCER** -> **REDUCER** checks what to do -> then **STORE** gets updated.
 
+-   ### Middleware:
+
+**Middleware** is a suggested way to extend Redux with custom functionality. This gives us extra features of Redux.
+
+It provides a third-party extension point between despatching an action, and the moment it reaches the reducer.
+
+> despatch() ----> **Middleware Info** ----> Reducer
+
+Use Middleware for _logging_, _crash reporting_, _performing asynchronous tasks_ etc..
+
+You can create as many loggers as you want !
+
+-   1. install **redux logger** packgage with npm:
+       `npm install redux-logger`
+-   2. create logger method provided by the library:
+       `const reduxLogger = require('redux-logger')`
+-   3. include middleware :
+       `const applyMiddleware = redux.applyMiddleware;`
+-   4. create new logger:
+       `const logger = reduxLogger.createLogger();`
+-   5. pass applyMiddleware(logger) as second parameter in the store
+       `const store = createStore(rootReducer, applyMiddleware(logger));`
+
 ---
 
 ## Pure Redux Library
@@ -136,6 +159,8 @@ dispatch method accepts **_action as parameter_** !
     `const redux = require("redux");`
 
 ---
+
+# React-Redux
 
 ## STEPS:
 
