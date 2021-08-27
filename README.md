@@ -147,6 +147,17 @@ You can create as many loggers as you want !
 -   5. pass applyMiddleware(logger) as second parameter in the store
        `const store = createStore(rootReducer, applyMiddleware(logger));`
 
+-   ### Axios & redux-thunk
+
+-   install **Axios & redux-thunk**
+    `npm install axios redux-thunk`
+
+-   add **axios**
+    `const axios = require("axios");`
+
+-   add **redux-thunk**
+    `const thunkMiddleware = require("redux-thunk").default;`
+
 ---
 
 ## Pure Redux Library
