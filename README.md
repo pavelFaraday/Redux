@@ -240,9 +240,11 @@ Use Middleware for _logging_, _crash reporting_, _performing asynchronous tasks_
 
 You can create as many loggers as you want !
 
+**Setup Middleware (not for REACT):**
+
 -   1. install **redux logger** packgage with npm:
        `npm install redux-logger`
--   2. create logger method provided by the library:
+-   2. create logger method provided by the library (not for REACT):
        `const reduxLogger = require('redux-logger')`
 -   3. include middleware :
        `const applyMiddleware = redux.applyMiddleware;`
@@ -250,6 +252,18 @@ You can create as many loggers as you want !
        `const logger = reduxLogger.createLogger();`
 -   5. pass applyMiddleware(logger) as second parameter in the store
        `const store = createStore(rootReducer, applyMiddleware(logger));`
+
+**Setup Middleware (only for REACT):**
+**Folder:** redux-lesson-3
+
+-   1. install **redux logger** packgage with npm:
+       `npm install redux-logger`
+-   2. import logger (only for REACT):
+       `import logger from 'redux-logger'`
+-   3.  apply Middlware in react:
+        `import { applyMiddleware } from "redux";`
+-   4. pass applyMiddleware(logger) as second parameter in the store
+       `const store = createStore(cakeReducer, applyMiddleware(logger));`
 
 ### Axios & redux-thunk
 
