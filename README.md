@@ -39,26 +39,26 @@ Redux is a state managment library for javaScript apps. It is a predictable stat
 
 ## Main Concepts:
 
--   ### Store:
+### Store:
 
 A globalized state, that holds all the data or state for our application and you can access this state anywhere separatilly - in each component of application.
 
       let store = createStore(reducerName);
 
-##### getState()
+#### getState()
 
 **Folder:** Redux library
 
 _getState()_ - method, that gives us app access to the state it currently holds / It gives current state.
 
-##### subscribe(listener)
+#### subscribe(listener)
 
 **Folder:** Redux library
 
 Register listeners to the subscribe() method.
 `subscribe()` method accepts a function as a parameter, which is executed any time the state in the Redux Store changes.
 
--   ### Action:
+### Action:
 
 It is just name, that describes an action you want to do. It is just function, that returns an object:
 
@@ -73,7 +73,7 @@ It is just name, that describes an action you want to do. It is just function, t
          };
       };
 
-##### Action Creators:
+#### Action Creators:
 
 **Folder:** Redux library
 
@@ -87,7 +87,7 @@ _action creator_ - it simply creates an action. It is an function that returns a
          };
       };
 
--   ### Reducer:
+### Reducer:
 
 **Folder:** Redux-lesson-2
 
@@ -105,7 +105,7 @@ It describes how your action transforms state into the next state. Reducer check
             }
          };
 
-##### Combine Reducers:
+#### Combine Reducers:
 
 **Folder:** Redux-lesson-2
 
@@ -122,7 +122,7 @@ It describes how your action transforms state into the next state. Reducer check
 3.  pass root reducer as created Store parameter
     `const store = createStore(rootReducer);`
 
--   ### Dispatch: (simple way)
+### Dispatch:
 
 **Folder:** Redux-lesson-2
 
@@ -130,17 +130,11 @@ This is the way where we can execute this Action.
 
 dispatch method accepts **_action as parameter_** !
 
-      store.dispatch(increment());
-      store.dispatch(decrement());
-      store.dispatch(decrement());
-
 > By **DISPATCH** We send **ACTION** to the **REDUCER** -> **REDUCER** checks what to do -> then **STORE** gets updated.
 
----
+#### 1. Dispatch: (old Way - with Pure Redux)
 
--   ### Dispatch: (Second Way)
-
-    With **connect, mapStateToProps & mapDispatchToProps**
+With **connect, mapStateToProps & mapDispatchToProps**
 
 **Folder:** Redux-lesson-3
 
@@ -181,7 +175,58 @@ mapStateToProps & mapDispatchToProps & connect with Component:
          );
       }
 
--   ### Middleware:
+#### 2. Dispatch: (New Way - with React Hooks)
+
+With **useSelector & useDespatch**
+
+**Folder:** Redux-lesson-2
+
+##### useSelector Hook:
+
+1.  import useSelector:
+
+         import { useSelector } from "react-redux";
+
+2.  define useSelector:
+
+         const counter = useSelector((state) => state.counter);
+
+3.  use variable in component:
+
+         function App() {
+            const counter = useSelector((state) => state.counter);
+
+            return (
+               <div className="App">
+                  <h1>Counter {counter}</h1>
+               </div>
+            );
+         }
+
+##### useDespatch Hook:
+
+1.  import useDespatch:
+
+         import { useDespatch } from "react-redux";
+
+2.  define useDespatch:
+
+         const dispatch = useDispatch();
+
+3.  use variable in component:
+
+         function App() {
+            const counter = useSelector((state) => state.counter);
+
+            return (
+               <div className="App">
+                  <h1>Counter {counter}</h1>
+                  <button onClick={() => dispatch(increment())}>+</button>
+               </div>
+            );
+         }
+
+### Middleware:
 
 **Folder:** Redux-library
 
@@ -206,7 +251,7 @@ You can create as many loggers as you want !
 -   5. pass applyMiddleware(logger) as second parameter in the store
        `const store = createStore(rootReducer, applyMiddleware(logger));`
 
--   ### Axios & redux-thunk
+### Axios & redux-thunk
 
 **Folder:** Redux-library
 
