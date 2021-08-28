@@ -11,7 +11,7 @@ function CakeContainer(props) {
 	);
 }
 
-// mapStateToProps
+// mapStateToProps:
 const mapStateToProps = (state) => {
 	return {
 		numOfCakes: state.numOfCakes,
