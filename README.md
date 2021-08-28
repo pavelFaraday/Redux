@@ -47,9 +47,13 @@ A globalized state, that holds all the data or state for our application and you
 
 ##### getState()
 
+**Folder:** Redux library
+
 _getState()_ - method, that gives us app access to the state it currently holds / It gives current state.
 
 ##### subscribe(listener)
+
+**Folder:** Redux library
 
 Register listeners to the subscribe() method.
 `subscribe()` method accepts a function as a parameter, which is executed any time the state in the Redux Store changes.
@@ -71,6 +75,8 @@ It is just name, that describes an action you want to do. It is just function, t
 
 ##### Action Creators:
 
+**Folder:** Redux library
+
 _action creator_ - it simply creates an action. It is an function that returns an action.
 
       const BUY_CAKE = "BUY_CAKE";
@@ -82,6 +88,8 @@ _action creator_ - it simply creates an action. It is an function that returns a
       };
 
 -   ### Reducer:
+
+**Folder:** Redux-lesson-2
 
 It describes how your action transforms state into the next state. Reducer checks which ACTION you did and based on that action modifies STORE. It is a function, that has 2 parametres:
 
@@ -99,6 +107,8 @@ It describes how your action transforms state into the next state. Reducer check
 
 ##### Combine Reducers:
 
+**Folder:** Redux-lesson-2
+
 1.  add dependency for combining reducers:
     `const combineReducers = redux.combineReducers;`
 
@@ -112,7 +122,9 @@ It describes how your action transforms state into the next state. Reducer check
 3.  pass root reducer as created Store parameter
     `const store = createStore(rootReducer);`
 
--   ### Dispatch:
+-   ### Dispatch: (simple way)
+
+**Folder:** Redux-lesson-2
 
 This is the way where we can execute this Action.
 
@@ -124,7 +136,54 @@ dispatch method accepts **_action as parameter_** !
 
 > By **DISPATCH** We send **ACTION** to the **REDUCER** -> **REDUCER** checks what to do -> then **STORE** gets updated.
 
+---
+
+-   ### Dispatch: (Second Way)
+
+    With **connect, mapStateToProps & mapDispatchToProps**
+
+**Folder:** Redux-lesson-3
+
+##### connect:
+
+1.  import **connect** in React:
+
+         import { connect } from "react-redux";
+
+2.  connect _mapStateToProps & mapDispatchToProps_ to Component:
+
+         export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer);
+
+##### mapStateToProps:
+
+      const mapStateToProps = (state) => {
+         return {
+            numOfCakes: state.numOfCakes,
+         };
+      };
+
+##### mapDispatchToProps:
+
+      const mapDispatchToProps = (dispatch) => {
+         return {
+            buy_cake: () => dispatch(buy_cake()),
+         };
+      };
+
+mapStateToProps & mapDispatchToProps & connect with Component:
+
+      function CakeContainer(props) {
+         return (
+            <div>
+               <h3>Number of Cakes - {props.numOfCakes}</h3>
+               <button onClick={props.buy_cake}>Buy Cake</button>
+            </div>
+         );
+      }
+
 -   ### Middleware:
+
+**Folder:** Redux-library
 
 **Middleware** is a suggested way to extend Redux with custom functionality. This gives us extra features of Redux.
 
@@ -149,6 +208,8 @@ You can create as many loggers as you want !
 
 -   ### Axios & redux-thunk
 
+**Folder:** Redux-library
+
 -   install **Axios & redux-thunk**
     `npm install axios redux-thunk`
 
@@ -162,6 +223,8 @@ You can create as many loggers as you want !
 
 ## Pure Redux Library
 
+**Folder:** Redux-library
+
 -   **Step 1:** initialize 'package.json' file with the default settings:
     `npm init --yes`
 -   **Step 2:** add Redux as a dependency for app:
@@ -172,6 +235,8 @@ You can create as many loggers as you want !
 ---
 
 # React-Redux
+
+**Folder:** Redux-lesson-2
 
 ## STEPS:
 
