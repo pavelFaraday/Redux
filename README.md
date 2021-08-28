@@ -325,13 +325,32 @@ You can create as many loggers as you want !
              isLogged: loggedReducer,
           });
 
-5.  For **Redux DevTools** Chrome Extension add this code to store as second parameter:
-    `window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()`
+5.  For **Redux DevTools** - first Way:
+    **Folder:** redux-lesson-2
+
+add this code to store as second parameter:
+`window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()`
 
 >         const store = createStore(
 >            allReducers,
 >            window.**REDUX_DEVTOOLS_EXTENSION** && window **REDUX_DEVTOOLS_EXTENSION**()
 >         );
+
+5.1 For **Redux DevTools** - Second Way:
+**Folder:** redux-lesson-3
+
+-   1. install with npm:
+       `npm install --save redux-devtools-extension`
+
+-   2.  import in React (with store):
+        `import { composeWithDevTools } from 'redux-devtools-extension';`
+
+-   3.  add it to store as second parameter:
+
+              const store = createStore(
+                 cakeReducer,
+                 composeWithDevTools(applyMiddleware(logger))
+              );
 
 6.  for connection of global store to hole app (in 'index.js'):
 
