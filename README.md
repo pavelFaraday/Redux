@@ -3,6 +3,8 @@
 **What is Redux?**
 Redux is a state managment library for javaScript apps. It is a predictable state container.
 
+While it's mostly used as a state management tool with React, you can use it with any other JavaScript framework or library.
+
 -   Redux stores the state of application - It is a container of all states of application.
 -   In Redux state of an app is a state represented by all individual components of that app.
 
